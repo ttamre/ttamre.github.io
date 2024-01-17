@@ -1,170 +1,187 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 
-	<title>\</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<!-- Basic Page Needs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Tem Tamre</title>
+	<meta name="description" content="">
+	<meta name="author" content="Tem Tamre">
 
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/normalize.css">
+
+	<!-- Scripts
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script src="js/utilities.js"></script>
 
 </head>
-
 <body>
-	<object
-		data="resume.pdf"
-		type='application/pdf'
-		width="1000px"
-		height="1200px"
-		scrolling="auto">
-	</object>
-</body>
+	<!-- Primary Page Layout
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<!-- Title -->
+	<div style="margin-left: 10%; margin-top: 5%; margin-bottom:1%" class="container">
+		<h1>Tem Tamre
+			<a href="https://github.com/ttamre/ttamre.github.io/blob/main/resume.pdf" target="_blank" rel="noopener noreferrer"><img src="images/cv-icon.png" height="30rem"></a>
+			<a href="https://github.com/ttamre" target="_blank" rel="noopener noreferrer"><img src="images/github-logo.png" height="30rem"></a></h1>
+		<p>
+			Hello! I'm an Edmonton-based software developer looking for a contract or full-time position.<br>
+			I specialize in <b>python, java, javascript, html/css</b>, and various other frameworks.<br><br>
+			If my portfolio interests you, please contact me at <a href="mailto:temtamre@gmail.com">temtamre@gmail.com</a>
+		</p>
+	</div>
 
-<!-- TODO: NEW CSS (skeleton) 
-<body>
-<div id="doc2" class="yui-t7">
-	<div id="inner">
-	
-		<div id="hd">
-			<div class="yui-gc">
-				<div class="yui-u first">
-					<h1>Tem Tamre</h1>
-					<h2>Software Developer</h2>
-				</div>
+	<!-- Work Experience -->
+	<div class="container">
+		<h4>Work Experience</h4>
+		<div style="margin-left: 2%">
+			<h5>University of Alberta & <a class="tooltip"  target="_blank" rel="noopener noreferrer">CIRADA<p class="tooltiptext">Canadian Initiative for Radio Astronomy Data Analysis</p></a></h5>
+			<!-- <p>*Canadian Initiative for Radio Astronomy Data Analysis</p> -->
+			<b>Software Developer (contract)</b> - Feb 2022 to Aug 2023
+			<ul>
+				<li>Added new radio data catalogues to researc software used by astrophysicists across Canada</li>
+				<li>Added new features to existing research software for a new version release</li>
+				<li>Built <b>custom APIs</b> for existing research software</li>
+				<li>Created new software to parallelize data collection steps for existing research software</li>
+				<li><b></b>Updated old documentation and UI elements across all in-house software projects</li>
+			</ul>
 
-				<div class="yui-u">
-					<div class="contact-info">
-						<h3><a id="pdf" class="button fa fa-download" href="resume.pdf" download="Tem Tamre - Resume"> Download CV</a></h3>
-						<h3><a href="mailto:temtamre@gmail.com">temtamre@gmail.com</a></h3>
-						<h3><a href="http://github.com/ttamre">github.com/ttamre</a></h3>
-					</div>
-				</div>
-			</div>
-		</div>
+			<h5>Intuit</h5>
+			<b>Software Developer (co-op)</b> - May 2019 to Aug 2019
+			<ul>
+				<li>Built custom <b>Bing</b> and <b>Google Cloud Search</b> engine evaluators</li>
+				<li>Researched different search systems and presented findings to the search services team</li>
+				<li>Assisted with search data ingestion for new search services using <b>AWS</b></li>
+				<li>Presented product proposals at monthly company-wide conferences that were later put into production</li>
+			</ul>
 
-		<div id="bd">
-			<div id="yui-main">
-				<div class="yui-b">
-
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Experience</h2>
-						</div>
-						
-						<div class="yui-u">
-
-							<div class="job">
-								<div class="text-box">
-									<div class="text-box">
-										<h2>Canadian Institute for Radio Astronomy Data Analysis;</h2>
-										<h2>University of Alberta</h2>
-									</div>
-									<h3>Software Developer</em></h3>
-									<h4>Feb 2022 - Aug 2023</h4>
-								</div>
-								<ul>
-									<li>Added new radio data catalogues to researc hsoftware used by astrophysicists across Canada</li>
-									<li>Added new features to existing research software for a new version release</li>
-									<li>Built custom APIs for existing research software</li>
-									<li>Created new software to parallelize data collection steps for existing research sofware</li>
-									<li>Updated old documentation and UI elements across all in-house software projects</li>
-								</ul>
-							</div>
-
-							<div class="job">
-								<div class="text-box">
-									<div class="text-box"><h2>Intuit</h2></div>
-									<h3>Software Developer (co-op)</h3>
-									<h4>May 2019 - Dec 2019</h4>
-								</div>
-								<ul>
-									<li>Built custom Bing and Google Cloud Search engine evaluators</li>
-									<li>Researched different search systems and presented findings to the search services team</li>
-									<li>Built custom Bing and Google Cloud Search engine evaluators</li>
-									<li>Assisted with search data ingestion for new search services using AWS</li>
-									<li>Presented product proposals at monthly company-wide conferences that were later put into production</li>
-								</ul>
-							</div>
-
-							<div class="job" style="margin-bottom: 0px; padding-bottom: 0px; border-bottom: 0px !important">
-								<div class="text-box">
-									<div class="text-box"><h2>University of Alberta</h2></div>
-									<h3>Science Summer Camp Coordinator</h3>
-									<h4>June 2018 - Aug 2018</h4>
-								</div>
-								<ul>
-									<li>Created computer science and game design lesson plans and activities for junior and high school students</li>
-									<li>Taught topics such as python programming, Arduino circuitry, unity game development, and 3D modelling</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Projects</h2>
-						</div>
-
-						<div class="yui-u">
-								<div class="talent">
-									<h2><a href="https://youtu.be/X_gNzF058u0">Unhindled</a></h2>
-									<p>A social media app that can connect to other social media apps</p>
-								</div>
-
-								<div class="talent">
-									<h2><a href="https://youtu.be/qowvspd6rEw">MedLog</a></h2>
-									<p>An android app that allows doctors and patients to communicate health issues with each other</p>
-								</div>
-
-								<div class="talent">
-									<h2><a href="https://github.com/ttamre/Feelsbook">Feelsbook</a></h2>
-									<p>An Android application that allows users to journal daily events and mood changes</p>
-								</div>
-						</div>
-						<div class="yui-u">
-							<div class="talent">
-								<h2><a href="https://github.com/ttamre/driftkit">driftkit</a></h2>
-								<p>Displays traffic cameras and speed traps across Edmonton using public data</p>
-							</div>
-
-							<div class="talent">
-								<h2><a href="https://github.com/ttamre/GGWP">GGWP</a></h2>
-								<p>A discord chat bot that pulls and displays stats for league of legends players</p>
-							</div>
-
-							<div class="talent">
-								<h2><a href="https://github.com/ttamre/Kaipher">Kaipher</a></h2>
-								<p>A passive portscanning tool</p>
-							</div>
-
-					</div>
-					</div>
-
-
-					<div class="yui-gf last">
-						<div class="yui-u first">
-							<h2>Education</h2>
-						</div>
-						<div class="yui-u">
-							<h2>University of Alberta - Edmonton, Alberta</h2>
-							<h3>Bachelor of Science; Computer Science & Psychology</h3>
-							<br>
-							<h5><strong>Science Internship Program</strong> (SIP) completed with Intuit</h5>
-							<h5>Class of 2024</h5>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="ft">
-			<p>Tem Tamre &mdash; <a href="mailto:temtamre@gmail.com">temtamre@gmail.com</a> &mdash; <a href="http://github.com/ttamre">github.com/ttamre</a></p>
+			<h5>University of Alberta</h5>
+			<b>Science Summer Camp Coordinator</b> - Jun 2018 to Aug 2019
+			<ul>
+				<li>Created computer science and game design lesson plans and activities for junior and high school students</li>
+				<li>Taught topics such as python programming, Arduino circuitry, unity game development, and 3D modelling</li>
+			</ul>
+			<h5>Various Service Industry Positions</h5>
+			<b>Cineplex, SunAura Parks, GOGO Friendly, Old Spaghetti Factory</b>
+			<ul>
+				<li>Movie theater/starbucks cashier</li>
+				<li>Dock supervisor</li>
+				<li>Landscaper</li>
+				<li>Server/Bartender/Busser</li>
+				<li>Landscaper</li>
+			</ul>
 		</div>
 	</div>
-</div>
-</body> -->
+
+	<!-- Projects -->
+	<div class="container">
+		<h4>Personal Projects</h4>
+		<table class="u-full-width">
+			<thead>
+				<tr>
+					<th>Name&emsp;&emsp;&emsp;</th>
+					<th>Description</th>
+					<th>Stack</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>untitled</td>
+					<td>online used vehicle database <em>(in progress)</em></td>
+					<td>html/css, js</td>
+				</tr>
+				<tr>
+					<td><a href="https://youtu.be/X_gNzF058u0" target="_blank" rel="noopener noreferrer">unhindled</a></td>
+					<td>social media website that can fetch users/posts from other sites</td>
+					<td>django, node.js, postgreSQL, html/css, heroku</td>
+				</tr>
+				<tr>
+					<td><a href="https://youtu.be/qowvspd6rEw" target="_blank" rel="noopener noreferrer">medlog</a></td>
+					<td>android app that allows doctors and patients to communicate with each other</td>
+					<td>java, android studio</td>
+				</tr>
+				<tr>
+					<td><a href="https://github.com/ttamre/feelsbook" target="_blank" rel="noopener noreferrer">feelsbook</a></td>
+					<td>a mood journal android app</td>
+					<td>java, android studio</td>
+				</tr>
+				<tr>
+					<td><a href="https://github.com/ttamre/driftkit" target="_blank" rel="noopener noreferrer">driftkit</a></td>
+					<td>displays traffic cameras near you using the Edmonton Open Data Portal</td>
+					<td>python, flask, circleci</td>
+				</tr>
+				<tr>
+					<td><a href="https://github.com/ttamre/kaipher" target="_blank" rel="noopener noreferrer">kaipher</a></td>
+					<td>a simple portscanning tool</td>
+					<td>python, circleci</td>
+				</tr>
+				<tr>
+					<td><a href="https://github.com/ttamre/ggwp" target="_blank" rel="noopener noreferrer">ggwp</a></td>
+					<td>a discord chat bot that fetches league of legends stats</td>
+					<td>python, circleci</td>
+				</tr>
+				<tr>
+					<td><a href="https://github.com/ttamre/pydex" target="_blank" rel="noopener noreferrer">pydex</a></td>
+					<td>a discord chat bot that acts as a pokedex</td>
+					<td>python, heroku</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Education -->
+	<div class="container">
+		<h4>Education</h4>
+		<div style="margin-left: 2%">
+			<h6 style="margin-bottom: 0.5rem;">University of Alberta (class of 2024)</h6>
+			&emsp;Bachelor of Science; <b>Computer Science</b> and <b>Psychology</b><br>
+			&emsp;<em><b>Science Internship Program (SIP)</b> designation completed with Intuit</em>
+		</p>
+		</div>
+	</div>
+
+	<!-- Contact -->
+	<div class="container">
+		<form>
+			<h4>Contact</h4>
+			<p>Feel free to reach me at <a href="mailto:temtamre@gmail.com">temtamre@gmail.com</a>,
+				or my phone number which can be found on my CV, or email me down below!</p>
+			<div class="row">
+
+				<div class="seven columns">
+					<label for="userEmail">Email</label>
+					<input id="userEmail" class="u-full-width" type="email" placeholder="email@domain.com">
+				</div>
+
+				<div class="five columns">
+					<label for="userSubject">Subject</label>
+					<input id="userSubject"class="u-full-width" type="text" placeholder="Reaching out from...">
+				</div>
+			</div>
+
+			<label for="userMessage">Message</label>
+			<textarea id="userMessage" class="u-full-width" placeholder="..."></textarea>
+			<label>
+				<input type="checkbox">
+				<span class="label-body">Send a copy to yourself</span>
+			</label>
+			<input id="userCopy" class="button-primary" type="submit" value="Submit">
+		</form>
+	</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
 </html>
