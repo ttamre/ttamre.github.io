@@ -25,20 +25,20 @@
 
 	<!-- Scripts
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<script src="js/utilities.js"></script>
+	<script type="text/javascript module" src="js/utilities.js"></script>
 
 </head>
 <body>
 	<!-- Primary Page Layout
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<!-- Title -->
-	<div style="margin-left: 10%; margin-top: 5%; margin-bottom:1%" class="container">
+	<div style="margin-left: 10%; margin-top: 3%; margin-bottom:1%" class="container">
 		<h1>Tem Tamre
-			<a href="https://github.com/ttamre/ttamre.github.io/blob/main/resume.pdf" target="_blank" rel="noopener noreferrer"><img src="images/cv-icon.png" height="30rem"></a>
+			<a href="https://github.com/ttamre/ttamre.github.io/blob/main/pdf/Tem Tamre - Resume.pdf" target="_blank" rel="noopener noreferrer"><img src="images/cv-icon.png" height="30rem"></a>
 			<a href="https://github.com/ttamre" target="_blank" rel="noopener noreferrer"><img src="images/github-logo.png" height="30rem"></a></h1>
 		<p>
-			Hello! I'm an Edmonton-based software developer looking for a contract or full-time position.<br>
-			I specialize in <b>python, java, javascript, html/css</b>, and various other frameworks.<br><br>
+			Hello! I'm an Edmonton-based full-stack software developer looking for a contract or full-time position.<br>
+			I specialize in <b>python, java, javascript, html/css</b>, and various related frameworks.<br><br>
 			If my portfolio interests you, please contact me at <a href="mailto:temtamre@gmail.com">temtamre@gmail.com</a>
 		</p>
 	</div>
@@ -80,7 +80,6 @@
 				<li>Dock supervisor</li>
 				<li>Landscaper</li>
 				<li>Server/Bartender/Busser</li>
-				<li>Landscaper</li>
 			</ul>
 		</div>
 	</div>
@@ -154,10 +153,10 @@
 
 	<!-- Contact -->
 	<div class="container">
-		<form>
-			<h4>Contact</h4>
-			<p>Feel free to reach me at <a href="mailto:temtamre@gmail.com">temtamre@gmail.com</a>,
-				or my phone number which can be found on my CV, or email me down below!</p>
+		<h4>Contact</h4>
+		<p>Feel free to reach me at <a href="mailto:temtamre@gmail.com">temtamre@gmail.com</a>,
+			or my phone number which can be found on my CV</p>
+		<!-- <form>
 			<div class="row">
 
 				<div class="seven columns">
@@ -165,20 +164,25 @@
 					<input id="userEmail" class="u-full-width" type="email" placeholder="email@domain.com">
 				</div>
 
+
 				<div class="five columns">
 					<label for="userSubject">Subject</label>
 					<input id="userSubject"class="u-full-width" type="text" placeholder="Reaching out from...">
 				</div>
 			</div>
 
+
 			<label for="userMessage">Message</label>
 			<textarea id="userMessage" class="u-full-width" placeholder="..."></textarea>
+
+
 			<label>
-				<input type="checkbox">
+				<input id="userCopy" type="checkbox">
 				<span class="label-body">Send a copy to yourself</span>
 			</label>
-			<input id="userCopy" class="button-primary" type="submit" value="Submit">
-		</form>
+
+			<input id="userSubmit" class="button-primary" type="submit" value="Submit" onclick="sendEmail()">
+		</form> -->
 	</div>
 
 <!-- End Document
