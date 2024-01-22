@@ -25,7 +25,7 @@
 
 	<!-- Scripts
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<script type="text/javascript module" src="js/utilities.js"></script>
+	<script type="module" src="js/utilities.js"></script>
 
 </head>
 <body>
@@ -155,34 +155,34 @@
 	<div class="container">
 		<h4>Contact</h4>
 		<p>Feel free to reach me at <a href="mailto:temtamre@gmail.com">temtamre@gmail.com</a>,
-			or my phone number which can be found on my CV</p>
-		<!-- <form>
+			or my phone number which can be found on my CV, or email me down below!</p>
+		<form id="contactForm">
 			<div class="row">
-
+				<!-- Email input -->
 				<div class="seven columns">
 					<label for="userEmail">Email</label>
 					<input id="userEmail" class="u-full-width" type="email" placeholder="email@domain.com">
 				</div>
 
-
+				<!-- Subject input -->
 				<div class="five columns">
 					<label for="userSubject">Subject</label>
 					<input id="userSubject"class="u-full-width" type="text" placeholder="Reaching out from...">
 				</div>
 			</div>
 
-
+			<!-- Message input -->
 			<label for="userMessage">Message</label>
 			<textarea id="userMessage" class="u-full-width" placeholder="..."></textarea>
 
-
+			<!-- Cc button -->
 			<label>
 				<input id="userCopy" type="checkbox">
 				<span class="label-body">Send a copy to yourself</span>
 			</label>
 
-			<input id="userSubmit" class="button-primary" type="submit" value="Submit" onclick="sendEmail()">
-		</form> -->
+			<input id="userSubmit" class="button-primary" type="submit" value="Submit">
+		</form>
 	</div>
 
 <!-- End Document

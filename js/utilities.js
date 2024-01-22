@@ -6,13 +6,15 @@
  */
 
 
-import Email from "./smtp";
+import Email from "./smtp.js";
+
+// Add event listeners on script load
+document.getElementById("userSubmit").addEventListener("click", sendEmail);
 
 
 /**
- * Send an email to myself after validating form data
- * 
- * @return
+ * Send an email after validating form data
+ * @return none
  */
 function sendEmail() {
     var from = document.getElementById("userEmail").value.trim();
@@ -20,10 +22,12 @@ function sendEmail() {
     var body = document.getElementById("userMessage").value.trim();
     var returnCopy = document.getElementById("userCopy").checked;
 
-    if (validateForm(from, subject, body, returnCopy)) {
+    console.log(`received: from ${from}, subject ${subject}, body ${body}, returnCopy ${returnCopy}`);
+
+    if (validateForm(from, subject, body)) {
         // build email object for SMTP
         var emailObject = {
-            SecureToken : "",
+            SecureToken : _getSecrets(),
             To : 'temtamre@gmail.com',
             From : from,
             Subject : subject,
@@ -35,7 +39,7 @@ function sendEmail() {
 
         // send email and alert the user
         Email.send(emailObject).then(
-            console.log(emailObject)
+            console.log("sent:", emailObject)
         ).then(alert("Message sent!"));
     };
 }
@@ -43,7 +47,6 @@ function sendEmail() {
 
 /**
  * Validate form data
- * 
  * @param {string} from     seder of the email
  * @param {string} subject  subject line of the email
  * @param {string} body     body text of the email
@@ -52,49 +55,34 @@ function sendEmail() {
 function validateForm(from, subject, message) {
     var error = "";
 
-    // general string validation
-    if (![from, subject, message].every(validateString)) {
-        error = "Invalid string detected; please retry your message"
+    // sanitation
+    if (!_validateString([from, subject, body])) {
+        error = "ERROR: validateString() returned false\n"
     }
 
     // email validation
     if (from == "") {
-        error += "Please enter your email address";
-    } else if (!validateEmail(from)) {
-        error += "Please enter a valid email address";
+        error += "ERROR: email field empty; please enter an email address\n";
+    } else if (!_validateEmail(from)) {
+        error += "ERROR: email field invalid; please enter a valid email address\n";
     }
 
     // subject validation (subject is optional; gets autofilled if left empty)
     if (subject == "") {subject = "Sent from 'ttamre.github.io' contact form";}
 
     // message validation
-    if (message == "") {error += "Please enter a message";}
+    if (message == "") {error += "ERROR: message field empty; please add content to your email";}
 
     // if an error was encountered, clear the fields, alert the user, and return false
     if (error != "") {
-        console.log(2);
-        from = "";
-        subject = "";
-        message = "";
-        returnCopy = null;
+        from, subject, message = "";
 
+        console.error(error);
         alert(error);
         return false;
+    } else {
+        return true;
     }
-    
-    var cleanEmailData = {from: from, subject: subject, message: message, returnCopy: returnCopy};
-    return cleanEmailData;
-}
-
-
-/**
- * Validate a string against a list of naughty strings
- * 
- * @param {string} text 
- * @returns {boolean} true if the string is safe, false otherwise
- */
-function validateString(text) {
-    return true;
 }
 
 
@@ -103,7 +91,44 @@ function validateString(text) {
  * @param {string} email user-provided email
  * @returns {boolean} true if string is in proper email format, false otherwise
  */
-function validateEmail(email) {
+function _validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
+}
+
+
+/**
+ * Validate a string or list of strings against a list of naughty strings
+ * @param {string} text or @param {list} [text]
+ * @returns {boolean} true if the string(s) is safe, false otherwise
+ */
+function _validateString(text) {
+    fetch("./js/invalid.json")
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(`ERROR: errror fetching JSON file\n${error}`));
+
+    if (typeof text === "list") {
+        return text.every(data.includes);
+    } else if (typeof text === "string") {
+        return data.includes(text);
+    } else {
+        return false;
+    }
+}
+
+
+/**
+ * @returns {string} 
+ */
+function _getSecrets() {
+    fetch("./js/secrets.json")
+        .then(response => response.json())
+        .catch(error => console.log(`ERROR: error fetching token\n${error}`))
+    
+    if (response) {
+        return response["smtp"]["token"];
+    } else {
+        return "";
+    }
 }
