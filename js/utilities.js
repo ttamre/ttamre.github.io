@@ -22,8 +22,6 @@ function sendEmail() {
     var body = document.getElementById("userMessage").value.trim();
     var returnCopy = document.getElementById("userCopy").checked;
 
-    console.log(`received: from ${from}, subject ${subject}, body ${body}, returnCopy ${returnCopy}`);
-
     if (validateForm(from, subject, body)) {
         // build email object for SMTP
         var emailObject = {
@@ -38,9 +36,10 @@ function sendEmail() {
         if (returnCopy) {emailObject[Cc] = from;}
 
         // send email and alert the user
-        Email.send(emailObject).then(
-            console.log("sent:", emailObject)
-        ).then(alert("Message sent!"));
+        Email.send(emailObject)
+            .then(response => console.log("response:", response))
+            .then(console.log("sent:", emailObject))
+            .catch(error => console.error(error));
     };
 }
 
@@ -49,14 +48,14 @@ function sendEmail() {
  * Validate form data
  * @param {string} from     seder of the email
  * @param {string} subject  subject line of the email
- * @param {string} body     body text of the email
+ * @param {string} message     body text of the email
  * @returns {boolean} true if string is valid, false otherwise
  */
 function validateForm(from, subject, message) {
     var error = "";
 
     // sanitation
-    if (!_validateString([from, subject, body])) {
+    if (!_validateString([from, subject, message])) {
         error = "ERROR: validateString() returned false\n"
     }
 
@@ -78,7 +77,6 @@ function validateForm(from, subject, message) {
         from, subject, message = "";
 
         console.error(error);
-        alert(error);
         return false;
     } else {
         return true;
@@ -103,15 +101,21 @@ function _validateEmail(email) {
  * @returns {boolean} true if the string(s) is safe, false otherwise
  */
 function _validateString(text) {
+    let badStrings = []
     fetch("./js/invalid.json")
-        .then(response => response.json())
-        .then(data => console.log(data))
+        .then(response => badStrings = response.json())
         .catch(error => console.error(`ERROR: errror fetching JSON file\n${error}`));
 
-    if (typeof text === "list") {
-        return text.every(data.includes);
+    if (typeof text === "object") {
+        // return !text.every(badStrings.includes);
+        for (let item in text) {
+            if (badStrings.includes(item)) {
+                return false;
+            }
+        }
+        return true;
     } else if (typeof text === "string") {
-        return data.includes(text);
+        return !badStrings.includes(text);
     } else {
         return false;
     }
@@ -122,13 +126,11 @@ function _validateString(text) {
  * @returns {string} 
  */
 function _getSecrets() {
+    let token = "";
     fetch("./js/secrets.json")
         .then(response => response.json())
-        .catch(error => console.log(`ERROR: error fetching token\n${error}`))
-    
-    if (response) {
-        return response["smtp"]["token"];
-    } else {
-        return "";
-    }
+        .then(response => console.log(response))
+        .catch(error => console.error(`ERROR: cant fetch token\n${error}`));
+
+    return token;
 }
