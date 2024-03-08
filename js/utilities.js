@@ -1,6 +1,6 @@
 /**
  * Scripts to be used for portfolio website
- * 
+ *
  * Author: Tem Tamre
  * Contact: temtamre@gmail.com
  */
@@ -107,13 +107,7 @@ function _validateString(text) {
         .catch(error => console.error(`ERROR: errror fetching JSON file\n${error}`));
 
     if (typeof text === "object") {
-        // return !text.every(badStrings.includes);
-        for (let item in text) {
-            if (badStrings.includes(item)) {
-                return false;
-            }
-        }
-        return true;
+        return !text.any(badStrings.includes);
     } else if (typeof text === "string") {
         return !badStrings.includes(text);
     } else {
@@ -123,7 +117,7 @@ function _validateString(text) {
 
 
 /**
- * @returns {string} 
+ * @returns {string}
  */
 function _getSecrets() {
     let token = "";
